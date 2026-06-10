@@ -1,0 +1,199 @@
+*, html{
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+}
+:root{
+    --deep-navy-blue: #0B2D56;
+    --bright-red: #FF0D2D;
+}
+/* Headings */
+h1 {font-size: clamp(2.5rem, 5vw, 5rem);}
+
+h2 {font-size: clamp(2rem, 4vw, 4rem);}
+
+h3 {font-size: clamp(1.75rem, 3.5vw, 3rem);}
+
+h4 {font-size: clamp(1.5rem, 3vw, 2.5rem);}
+
+h5 {font-size: clamp(1.25rem, 2.5vw, 2rem);}
+
+h6 {font-size: clamp(1rem, 2vw, 1.5rem);}
+
+/* Body Text */
+p {font-size: clamp(1rem, 1.2vw, 1.125rem); line-height: 1.7;}
+
+/* Links */
+a {font-size: clamp(0.95rem, 1.1vw, 1.1rem);}
+
+/* Lists */
+li {font-size: clamp(0.95rem, 1.1vw, 1.1rem);}
+
+/* Small Text */
+small {font-size: clamp(0.8rem, 0.9vw, 0.95rem);}
+
+/* Buttons */
+button,.btn {font-size: clamp(1rem, 1.2vw, 1.2rem);}
+
+/* Form Elements */
+input, textarea, select {font-size: clamp(1rem, 1.1vw, 1.1rem);}
+
+/* Labels */
+label {font-size: clamp(0.9rem, 1vw, 1rem);}
+
+
+/* HEADER */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    -webkit-backdrop-filter: brightness(20%);
+    backdrop-filter: brightness(20%);
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    width: 90%;
+}
+header img{max-width: 70px;}
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+header nav a{
+    color: white;
+    font-weight: bold;
+}
+header nav a:hover{color: var(--bright-red);}
+header .cta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+header .cta a{
+    padding: 10px 20px;
+    border: 2px solid var(--bright-red);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+header .cta a:first-child, header .cta a:last-child:hover{background: var(--bright-red);}
+header .cta a:last-child, header .cta a:first-child:hover{background: transparent;}
+
+/* MENU */
+header .menu{
+    width: 25px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+header .menu div{
+    width: 100%;
+    height: 3px;
+    background: var(--bright-red);
+    border-radius: 30px;
+}
+header .menu.open div:first-child{
+    transform: translateY(7px) rotate(45deg);
+}
+header .menu.open div:nth-child(2){opacity: 0;}
+header .menu.open div:last-child{
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* HERO */
+main .hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/herovla.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+main .hero .txt{
+    color: white;
+    text-align: center;
+}
+main .hero .txt h6{
+    padding: 5px 20px;
+    background: var(--bright-red);
+    color: white;
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+main .hero .txt h1 span{
+    background: linear-gradient(to right, var(--bright-red), var(--deep-navy-blue));
+    color: transparent;
+    background-clip: text;
+    font-style: italic;
+    font-weight: lighter;
+    opacity: 1;
+}
+main .hero .txt p{
+    width: 50%;
+    margin: auto;
+    opacity: 0.7;
+    font-style: italic;
+}
+main .hero .cta{
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+main .hero .cta a{
+    padding: 10px 25px;
+    border: 2px solid var(--bright-red);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+main .hero .cta a:first-child, main .hero .cta a:last-child:hover{
+    background: var(--bright-red);
+}
+main .hero .cta a:last-child, main .hero .cta a:first-child:hover{
+    background: transparent;
+}
+
+/* PHONES */
+@media screen and (max-width: 678px) {
+    header nav, header .cta{display: none;}
+    header .menu{margin-right: 10px;}
+    main section{padding: 0 20px;}
+    main .hero .txt h1{line-height: 1.5;}
+    main .hero .txt p{width: 100%;}
+    main .hero .cta a{padding: 10px 15px;}
+}
+
+/* TABLETS */
+@media screen and (min-width: 678px) {
+    header nav, header .cta{display: none;}
+    header .menu{margin-right: 10px;}
+}
+
+/* LAPTOPS */
+@media screen and (min-width: 1024px) {
+    header .menu{display: none;}
+    header nav, header .cta{display: flex;}
+    
+}
